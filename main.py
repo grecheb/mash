@@ -41,7 +41,13 @@ if "acceso" not in st.session_state:
 
 # --- FASE 1: Advertencia inicial ---
 if st.session_state.fase == "advertencia":
-    st.image("https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/ringuito%20alerta.png")
+    st.markdown("""
+    <div style="display:flex; justify-content:center; margin-bottom:15px;">
+        <img src="https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/ringuito%20alerta.png"
+             style="width:80px; height:80px; border-radius:50%; object-fit:cover;">
+    </div>
+    """, unsafe_allow_html=True)
+
     st.markdown("<h1 style='text-align:center;'>ADVERTASAO</h1>", unsafe_allow_html=True)
     st.write("Abre esta página en tu compu para visualizarla mejor")
 
@@ -55,15 +61,19 @@ if st.session_state.fase == "advertencia":
 
 # --- FASE 2: Prueba para humanos ---
 elif st.session_state.fase == "prueba_humano":
-    st.image("https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/ringuito%20de%20hecho%20.png")
+    st.markdown("""
+    <div style="display:flex; justify-content:center; margin-bottom:15px;">
+        <img src="https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/ringuito%20de%20hecho%20.png"
+             style="width:80px; height:80px; border-radius:50%; object-fit:cover;">
+    </div>
+    """, unsafe_allow_html=True)
+
     st.write("Resuelve para demostrar que eres humano:")
 
-    # Guardar a y b en la sesión si aún no existen
     if "num_a" not in st.session_state or "num_b" not in st.session_state:
         st.session_state.num_a = random.randint(1, 10)
         st.session_state.num_b = random.randint(1, 10)
 
-    # Mostrar la suma siempre igual hasta que se acierte
     respuesta = st.number_input(
         f"¿Cuánto es {st.session_state.num_a} + {st.session_state.num_b}?",
         step=1
@@ -80,7 +90,13 @@ elif st.session_state.fase == "prueba_humano":
 
 # --- FASE 3: Pantalla de login ---
 elif st.session_state.fase == "login":
-    st.image("https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/ringuito%20brillante.png")
+    st.markdown("""
+    <div style="display:flex; justify-content:center; margin-bottom:15px;">
+        <img src="https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/ringuito%20brillante.png"
+             style="width:80px; height:80px; border-radius:50%; object-fit:cover;">
+    </div>
+    """, unsafe_allow_html=True)
+
     st.title("🔒 Ingresa la contraseña secreta")
     password_input = st.text_input("Contraseña:", type="password")
     if st.button("Entrar"):
@@ -98,7 +114,14 @@ elif st.session_state.fase == "login":
 # --- FASE 4: Página principal ---
 elif st.session_state.fase == "principal" and st.session_state.acceso:
     st.title("✨ Felices 3 meses mi amor ✨")
-    st.image("https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/ringuito%20enamordo.png")
+
+    st.markdown("""
+    <div style="display:flex; justify-content:center; margin-bottom:15px;">
+        <img src="https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/ringuito%20enamordo.png"
+             style="width:80px; height:80px; border-radius:50%; object-fit:cover;">
+    </div>
+    """, unsafe_allow_html=True)
+
     st.write("Te amo")
     st.write("de Grechi para Mena")
 
