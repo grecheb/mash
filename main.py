@@ -44,7 +44,7 @@ if st.session_state.fase == "advertencia":
     st.markdown("""
     <div style="display:flex; justify-content:center; margin-bottom:15px;">
         <img src="https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/ringuito%20alerta.png"
-             style="width:120px; height:120px; border-radius:50%; object-fit:cover;">
+             style="width:120px; height:120px; object-fit:contain;">
     </div>
     """, unsafe_allow_html=True)
 
@@ -64,7 +64,7 @@ elif st.session_state.fase == "prueba_humano":
     st.markdown("""
     <div style="display:flex; justify-content:center; margin-bottom:15px;">
         <img src="https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/ringuito%20de%20hecho%20.png"
-             style="width:120px; height:120px; border-radius:50%; object-fit:cover;">
+             style="width:120px; height:120px; object-fit:contain;">
     </div>
     """, unsafe_allow_html=True)
 
@@ -93,7 +93,7 @@ elif st.session_state.fase == "login":
     st.markdown("""
     <div style="display:flex; justify-content:center; margin-bottom:15px;">
         <img src="https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/ringuito%20brillante.png"
-             style="width:120px; height:120px; border-radius:50%; object-fit:cover;">
+             style="width:120px; height:120px; object-fit:contain;">
     </div>
     """, unsafe_allow_html=True)
 
@@ -118,7 +118,7 @@ elif st.session_state.fase == "principal" and st.session_state.acceso:
     st.markdown("""
     <div style="display:flex; justify-content:center; margin-bottom:15px;">
         <img src="https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/ringuito%20enamordo.png"
-             style="width:120px; height:120px; border-radius:50%; object-fit:cover;">
+             style="width:120px; height:120px; object-fit:contain;">
     </div>
     """, unsafe_allow_html=True)
 
