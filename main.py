@@ -224,29 +224,17 @@ elif st.session_state.fase == "login":
 
 # --- FASE 4: Página principal ---
 elif st.session_state.fase == "principal" and st.session_state.acceso:
+    st.title("✨ Felices 3 meses mi amor ✨")
+
     st.markdown("""
-    <div style="text-align:center;">
-        <!-- Icono gatito -->
+    <div style="display:flex; justify-content:center; margin-bottom:15px;">
         <img src="https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/ringuito%20enamordo.png"
-             style="width:180px; height:180px; object-fit:contain; margin-bottom:20px;">
-
-        <!-- Título -->
-        <h1 style="color: #d63384; font-size: 40px; font-family: 'Comic Sans MS', cursive; margin-top:0;">
-            ✨ Felices 3 Meses Mi Amor ✨
-        </h1>
-
-        <!-- Mensaje -->
-        <h2 style="color: #ff4d6d; font-family: 'Comic Sans MS', cursive; margin-top:10px;">
-            ❤️ Te amo con todo mi corazón ❤️
-        </h2>
-
-        <!-- Dedicatoria -->
-        <p style="color: #b3005c; font-size: 20px; font-weight: bold; margin-top:15px;">
-            De Grechi para Mena 💌
-        </p>
+             style="width:120px; height:120px; object-fit:contain;">
     </div>
     """, unsafe_allow_html=True)
 
+    st.write("Te amo")
+    st.write("de Grechi para Mena")
 
 
     # Pestañas
