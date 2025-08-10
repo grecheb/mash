@@ -224,17 +224,80 @@ elif st.session_state.fase == "login":
 
 # --- FASE 4: Página principal ---
 elif st.session_state.fase == "principal" and st.session_state.acceso:
-    st.title("✨ Felices 3 meses mi amor ✨")
-
+    # Fondo especial
     st.markdown("""
-    <div style="display:flex; justify-content:center; margin-bottom:15px;">
-        <img src="https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/ringuito%20enamordo.png"
-             style="width:120px; height:120px; object-fit:contain;">
+    <style>
+    .corazones {
+        position: relative;
+        height: 100px;
+    }
+    .corazon {
+        position: absolute;
+        color: #ff99aa;
+        font-size: 24px;
+        animation: flotar 5s infinite ease-in-out;
+    }
+    @keyframes flotar {
+        0% { transform: translateY(0); opacity: 1; }
+        50% { transform: translateY(-20px); opacity: 0.7; }
+        100% { transform: translateY(0); opacity: 1; }
+    }
+    .titulo-brillo {
+        font-size: 40px;
+        font-weight: bold;
+        color: #ff4d6d;
+        text-shadow: 0 0 5px #fff, 0 0 10px #ff80ab;
+        animation: brillo 2s infinite alternate;
+        text-align: center;
+        font-family: 'Comic Sans MS', cursive;
+    }
+    @keyframes brillo {
+        from { text-shadow: 0 0 5px #fff, 0 0 10px #ff80ab; }
+        to { text-shadow: 0 0 20px #fff, 0 0 30px #ff4d6d; }
+    }
+    .mensaje-caja {
+        background-color: #fff0f5;
+        border: 2px solid #ffb6c1;
+        border-radius: 20px;
+        padding: 20px;
+        text-align: center;
+        font-size: 18px;
+        color: #ad1457;
+        font-family: 'Comic Sans MS', cursive;
+        margin-top: 15px;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
+    # Corazoncitos flotando
+    st.markdown("""
+    <div class="corazones">
+        <div class="corazon" style="left: 10%;">💖</div>
+        <div class="corazon" style="left: 30%; animation-delay: 1s;">💗</div>
+        <div class="corazon" style="left: 50%; animation-delay: 2s;">💓</div>
+        <div class="corazon" style="left: 70%; animation-delay: 1.5s;">💘</div>
+        <div class="corazon" style="left: 90%; animation-delay: 0.5s;">💕</div>
     </div>
     """, unsafe_allow_html=True)
 
-    st.write("Te amo")
-    st.write("de Grechi para Mena")
+    # Título animado
+    st.markdown('<div class="titulo-brillo">✨ Felices 3 meses mi amor ✨</div>', unsafe_allow_html=True)
+
+    # Imagen centrada con marco redondo
+    st.markdown("""
+    <div style="display:flex; justify-content:center; margin-bottom:15px;">
+        <img src="https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/ringuito%20enamordo.png"
+             style="width:140px; height:140px; object-fit:cover; border-radius:50%; border:4px solid #ff99aa; background-color: white; padding:5px;">
+    </div>
+    """, unsafe_allow_html=True)
+
+    # Cajita con mensaje romántico
+    st.markdown("""
+    <div class="mensaje-caja">
+        💌 Te amo con todo mi corazón 💌<br>
+        De <b>Grechi</b> para <b>Mena</b>
+    </div>
+    """, unsafe_allow_html=True)
 
 
     # Pestañas
