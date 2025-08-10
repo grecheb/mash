@@ -83,35 +83,6 @@ if st.session_state.fase == "advertencia":
 
 # --- FASE 2: Prueba para humanos ---
 elif st.session_state.fase == "prueba_humano":
-    st.markdown("""
-    <div style="display:flex; justify-content:center; margin-bottom:15px;">
-        <img src="https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/ringuito%20de%20hecho%20.png"
-             style="width:120px; height:120px; object-fit:contain;">
-    </div>
-    """, unsafe_allow_html=True)
-
-    st.write("Resuelve para demostrar que eres humano:")
-
-    if "num_a" not in st.session_state or "num_b" not in st.session_state:
-        st.session_state.num_a = random.randint(1, 10)
-        st.session_state.num_b = random.randint(1, 10)
-
-    respuesta = st.number_input(
-        f"¿Cuánto es {st.session_state.num_a} + {st.session_state.num_b}?",
-        step=1
-    )
-
-    if st.button("Verificar"):
-        if respuesta == st.session_state.num_a + st.session_state.num_b:
-            st.session_state.fase = "login"
-            del st.session_state["num_a"]
-            del st.session_state["num_b"]
-            st.rerun()
-        else:
-            st.error("Respuesta incorrecta. Intenta de nuevo.") 
-
-# --- FASE 2: Prueba para humanos ---
-elif st.session_state.fase == "prueba_humano":
     # Imagen centrada
     st.markdown("""
     <div style="display:flex; justify-content:center; margin-bottom:15px;">
@@ -160,6 +131,29 @@ elif st.session_state.fase == "prueba_humano":
             st.rerun()
         else:
             st.error("❌ Respuesta incorrecta. Intenta de nuevo.")
+            
+# --- FASE 3: Pantalla de login ---
+elif st.session_state.fase == "login":
+    st.markdown("""
+    <div style="display:flex; justify-content:center; margin-bottom:15px;">
+        <img src="https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/ringuito%20brillante.png"
+             style="width:120px; height:120px; object-fit:contain;">
+    </div>
+    """, unsafe_allow_html=True)
+
+    st.title("🔒 Ingresa la contraseña secreta")
+    password_input = st.text_input("Contraseña:", type="password")
+    if st.button("Entrar"):
+        if password_input.strip().lower() in PASSWORDS_VALIDOS:
+            st.session_state.acceso = True
+            st.session_state.fase = "principal"
+            st.success("¡Correcto! :3")
+            st.rerun()
+        else:
+            st.session_state.intentos += 1
+            st.error("Contraseña incorrecta...")
+            if st.session_state.intentos <= len(mensajes_error):
+                st.info(mensajes_error[st.session_state.intentos - 1])
 
 # --- FASE 4: Página principal ---
 elif st.session_state.fase == "principal" and st.session_state.acceso:
