@@ -4,24 +4,66 @@ import random
 # --- Configuración de la página ---
 st.set_page_config(page_title="Felices 3 meses ❤️", layout="wide")
 
-# CSS para personalizar diseño
+# CSS para diseño cute
 st.markdown("""
     <style>
+    /* Fondo general en degradado cute */
     body {
         background: linear-gradient(135deg, #ffe6e6, #fff0f5);
+        font-family: 'Comic Sans MS', cursive, sans-serif;
     }
+
+    /* Botones más grandes y redondeados */
+    div.stButton > button {
+        background-color: #ffb6c1;
+        color: white;
+        padding: 12px 20px;
+        border-radius: 20px;
+        border: none;
+        font-size: 18px;
+        font-weight: bold;
+        transition: all 0.3s ease;
+    }
+    div.stButton > button:hover {
+        background-color: #ff99aa;
+        transform: scale(1.05);
+    }
+
+    /* Tabs cute */
     .stTabs [role="tablist"] button {
         font-size: 18px;
         font-weight: bold;
+        color: #d63384;
     }
+
+    /* Icono redondo para imágenes */
     .icono-redondo {
         border-radius: 50%;
         width: 120px;
         height: 120px;
         object-fit: cover;
+        border: 3px solid #ff99aa;
+    }
+
+    /* Colores pastel para mensajes */
+    .stAlert > div {
+        border-radius: 10px;
+    }
+    .stAlert-success {
+        background-color: #e6ffe6 !important;
+        color: #2e7d32 !important;
+    }
+    .stAlert-error {
+        background-color: #ffe6e6 !important;
+        color: #b71c1c !important;
+    }
+    .stAlert-info {
+        background-color: #e6f0ff !important;
+        color: #0d47a1 !important;
     }
     </style>
 """, unsafe_allow_html=True)
+
 
 # --- Variables ---
 PASSWORDS_VALIDOS = ["mash mash", "mashmash", "mash  mash", "mash  mash "]  # Variantes
