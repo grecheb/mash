@@ -7,9 +7,11 @@ st.set_page_config(page_title="Felices 3 meses ❤️", layout="wide")
 # CSS para diseño cute
 st.markdown("""
     <style>
-    /* Fondo general en degradado cute */
+    /* Fondo general con imagen y degradado cute */
     body {
-        background: linear-gradient(135deg, #ffe6e6, #fff0f5);
+        background: url('https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/tikiti.png') repeat center,
+                    linear-gradient(135deg, #ffe6e6, #fff0f5);
+        background-size: 100px 100px, cover;
         font-family: 'Comic Sans MS', cursive, sans-serif;
     }
 
@@ -63,7 +65,6 @@ st.markdown("""
     }
     </style>
 """, unsafe_allow_html=True)
-
 
 # --- Variables ---
 PASSWORDS_VALIDOS = ["mash mash", "mashmash", "mash  mash", "mash  mash "]  # Variantes
