@@ -232,7 +232,7 @@ elif st.session_state.fase == "principal" and st.session_state.acceso:
 
         <!-- Título -->
         <h1 style="color: #d63384; font-size: 40px; font-family: 'Comic Sans MS', cursive; margin-top:0;">
-             Felices 3 Meses Mi Amor 
+            ✨ Felices 3 Meses Mi Amor ✨
         </h1>
 
         <!-- Mensaje -->
