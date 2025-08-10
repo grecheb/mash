@@ -110,28 +110,56 @@ elif st.session_state.fase == "prueba_humano":
         else:
             st.error("Respuesta incorrecta. Intenta de nuevo.") 
 
-# --- FASE 3: Pantalla de login ---
-elif st.session_state.fase == "login":
+# --- FASE 2: Prueba para humanos ---
+elif st.session_state.fase == "prueba_humano":
+    # Imagen centrada
     st.markdown("""
     <div style="display:flex; justify-content:center; margin-bottom:15px;">
-        <img src="https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/ringuito%20brillante.png"
+        <img src="https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/ringuito%20de%20hecho%20.png"
              style="width:120px; height:120px; object-fit:contain;">
     </div>
     """, unsafe_allow_html=True)
 
-    st.title("🔒 Ingresa la contraseña secreta")
-    password_input = st.text_input("Contraseña:", type="password")
-    if st.button("Entrar"):
-        if password_input.strip().lower() in PASSWORDS_VALIDOS:
-            st.session_state.acceso = True
-            st.session_state.fase = "principal"
-            st.success("¡Correcto! :3")
+    # Caja con título de verificación
+    st.markdown("""
+    <div style="
+        border: 3px solid #4CAF50;
+        background-color: #e8f5e9;
+        padding: 15px;
+        border-radius: 10px;
+        text-align: center;
+        color: #2e7d32;
+        font-weight: bold;
+        font-size: 22px;
+        margin-bottom: 20px;">
+        🧠 Verificación de Humano 🧠<br>
+        Resuelve esta sencilla suma para continuar
+    </div>
+    """, unsafe_allow_html=True)
+
+    # Mantener la suma igual hasta que se acierte
+    if "num_a" not in st.session_state or "num_b" not in st.session_state:
+        st.session_state.num_a = random.randint(1, 10)
+        st.session_state.num_b = random.randint(1, 10)
+
+    # Entrada de número centrada
+    st.markdown("<h4 style='text-align:center;'>¿Cuánto es...?</h4>", unsafe_allow_html=True)
+    st.markdown(f"<h2 style='text-align:center; color:#2e7d32;'>{st.session_state.num_a} + {st.session_state.num_b}</h2>", unsafe_allow_html=True)
+
+    # Input centrado y botón ancho
+    col1, col2, col3 = st.columns([1, 2, 1])
+    with col2:
+        respuesta = st.number_input("Tu respuesta:", step=1, key="respuesta_humano")
+        verificar = st.button("✅ Verificar", use_container_width=True)
+
+    if verificar:
+        if respuesta == st.session_state.num_a + st.session_state.num_b:
+            st.session_state.fase = "login"
+            del st.session_state["num_a"]
+            del st.session_state["num_b"]
             st.rerun()
         else:
-            st.session_state.intentos += 1
-            st.error("Contraseña incorrecta...")
-            if st.session_state.intentos <= len(mensajes_error):
-                st.info(mensajes_error[st.session_state.intentos - 1])
+            st.error("❌ Respuesta incorrecta. Intenta de nuevo.")
 
 # --- FASE 4: Página principal ---
 elif st.session_state.fase == "principal" and st.session_state.acceso:
