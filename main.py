@@ -366,36 +366,93 @@ elif st.session_state.fase == "principal" and st.session_state.acceso:
 
 
 
-    # --- Tab 2: Álbum de recuerdos ---
-    with tab2:
-        st.header("Álbum de recuerdos")
-        st.write("Aquí algunos recuerdos bonitos juntitas y por muchísimos más")
+# --- Tab 2: Álbum de recuerdos ---
+with tab2:
+    st.header("Álbum de recuerdos")
 
-        album_recuerdos = [
-            {"titulo": "Ellas dos se van a enamorar", "desc": "Creo que todavía no lo saben, aunque las dos tienen un crush gigante en la otra, pero ahora se aman :3 que buena clase de antro", "fotos": ["https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/ellas%20dos%20se%20van%20a%20enamorar.jpg"]},
-            {"titulo": "Que rico beso", "desc": "Esta es de las primeras fotos que nos tomamos ya juntitas. Amo mucho cuando me besas especialmente con labial y me dejas marcadita :P lléname de besos siempre", "fotos": ["https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/primera%20fotito%20beso.JPG"]},
-            {"titulo": "Esta fotitooo", "desc": "Nuestra primera fotito en el espejo, en el baño de sociales donde una vez me estampaste contra la pared :3 (como me gusta), amo mucho capturar momento bonitos contigo, creo que te gusto", "fotos": ["https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/primer%20fotito%20en%20el%20espejo.JPG"]},
-            {"titulo": "En el ascensor del stella maris", "desc": "Me encanta tener citas contigo y que me acompañes a lugares random, como también amo acompañarte. Por más besitos en ascensores :333", "fotos": ["https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/ascensor%20stella.JPG"]},
-            {"titulo": "Unas hamburguestitas", "desc": "QUE RICOOOO comer contigo :3333 esto fue después de mi cita en el stella, que bonitos son los full days contigo, los quiero para toda la vida", "fotos": ["https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/cita%20comiendo%20hamburgesas.JPG"]},
-            {"titulo": "Ahora usas mi inicial", "desc": "La primera vez que te la pusiste casi se me sale mi corazoncito, te queda muy bien la g, y yo me siento completamente tuya", "fotos": ["https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/usas%20mi%20inicial.JPG"]},
-            {"titulo": "Somos kbros", "desc": "Ojo creo que somos gays DAJDJADJAJ por muchos más pride juntitas VIVAN LAS LESBIANAS", "fotos": ["https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/nuestros%20nombres%20pride.HEIC"]},
-            {"titulo": "Tan pero tan linda", "desc": "QUE BONITA CON NUESTRA MANTITA MIMIMIMIMI citas casuales como la que tuvimos ese día, o simplemente estar en cato contigo es perfecto", "fotos": ["https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/IMG_1171.HEIC"]},
-            {"titulo": "Bien cansaditas", "desc": "Porque estaremos tan cansaditas a amor? Jejejeje que buen día, creo que chi te acuerdas como olvidarlo, comimos bien rico (no almorzamos), que ganas de siempre comer rico contigo :3", "fotos": ["https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/ese%20jueves%20en%20mi%20casita.HEIC"]},
-            {"titulo": "Serving cunt", "desc": "Este día servimos concha, fotito juntitas cuando estabas por quedarte dormida encima de mío, siempre voy a estar aquí para ti", "fotos": ["https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/fiesta%20de%20ana.JPG"]},
-            {"titulo": "Full queso", "desc": "Aquí quería pizza y fuimos a comer una jeje, gracias por cumplir mis caprichos y engreírme siempre mi amor, a mí también me gusta hacerlo contigo :3", "fotos": ["https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/cita%20comiendo%20pizza.HEIC"]},
-            {"titulo": "Dímelo de frente", "desc": "Amo demasiado esta foto en la que parece que me quieres consumir, yo también quiero hacerlo la verdad. Te como te como a besos", "fotos": ["https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/beshito.JPG"]},
-            {"titulo": "Mi amor con un quesito", "desc": "Estoy completamente enamorada", "fotos": ["https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/tu%20con%20un%20quesito.HEIC"]},
-            {"titulo": "Aventuras en el centro", "desc": "Este día la pase increíble, me divertí mucho contigo amor paseando y comprando. Sin duda me haces muy feliz :3333", "fotos": ["https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/besito%20en%20el%20centro.JPG"]},
-            {"titulo": "Ahora las dos usamos nuestras iniciales", "desc": "Yo soy tuya como tu eres mía y se siente muy bien :3", "fotos": ["https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/usando%20tu%20inicial.JPG", "https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/mi%20amor%20con%20la%20g.JPG"]},
-            {"titulo": "Mi amor con sus flores", "desc": "Quiero darte flores siempre y verte sonreir todos los días, mi mujer hermosa", "fotos": ["https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/mi%20amor%20con%20sus%20flores.HEIC"]},
-            {"titulo": "FULL LECHE", "desc": "Soy la mujer más suertuda del mundo por tenerte a mi lado, y tu eres la mejor enamorada del mundo, alimentándome con arroz con leche VIVAAAA", "fotos": ["https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/arroz%20con%20leche%201.HEIC", "https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/arroz%20con%20leche%202.JPG"]},
-            {"titulo": "Que tal salchipapa", "desc": "Otra aventura loca loca junto a ti, JAAA tenemos una suerte, igual me he dado cuenta que los días son mejores a tu lado", "fotos": ["https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/esta%20salchipapa.HEIC"]},
-            {"titulo": "Juguemos como locas?", "desc": "JADJADJAJDAJDJADJAJDJA mi mujer competitiva :3 amo jugar como loca contigo mi amor", "fotos": ["https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/juguemos%20como%20locas%3F.HEIC"]},
-            {"titulo": "Amor de mi vida", "desc": "Esta es una de mis fotos favoritas, que me gustaría tener así en un polo cof cof, nunca me canso de decirte que eres preciosa hermosa, te amo con todo mi ser", "fotos": ["https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/mi%20amor%20en%20el%20fil%20esta%20foto%20para%20polo.HEIC"]}
-        ]
+    st.markdown("""
+    <p style="
+        font-family:'Comic Sans MS', cursive; 
+        font-size:18px; 
+        color:#d63384; 
+        font-weight:bold; 
+        margin-bottom:15px;">
+        Aquí algunos recuerdos bonitos juntitas y por muchísimos más 💜
+    </p>
+    """, unsafe_allow_html=True)
 
-        seleccion = st.selectbox("Elige un recuerdo:", [r["titulo"] for r in album_recuerdos])
-        recuerdo = next(r for r in album_recuerdos if r["titulo"] == seleccion)
-        st.write(recuerdo["desc"])
-        for foto in recuerdo["fotos"]:
-            st.image(foto) 
+    album_recuerdos = [
+        {"titulo": "Ellas dos se van a enamorar", "desc": "Creo que todavía no lo saben, aunque las dos tienen un crush gigante en la otra, pero ahora se aman :3 que buena clase de antro", "fotos": ["https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/ellas%20dos%20se%20van%20a%20enamorar.jpg"]},
+        {"titulo": "Que rico beso", "desc": "Esta es de las primeras fotos que nos tomamos ya juntitas. Amo mucho cuando me besas especialmente con labial y me dejas marcadita :P lléname de besos siempre", "fotos": ["https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/primera%20fotito%20beso.JPG"]},
+        {"titulo": "Esta fotitooo", "desc": "Nuestra primera fotito en el espejo, en el baño de sociales donde una vez me estampaste contra la pared :3 (como me gusta), amo mucho capturar momento bonitos contigo, creo que te gusto", "fotos": ["https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/primer%20fotito%20en%20el%20espejo.JPG"]},
+        {"titulo": "En el ascensor del stella maris", "desc": "Me encanta tener citas contigo y que me acompañes a lugares random, como también amo acompañarte. Por más besitos en ascensores :333", "fotos": ["https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/ascensor%20stella.JPG"]},
+        {"titulo": "Unas hamburguestitas", "desc": "QUE RICOOOO comer contigo :3333 esto fue después de mi cita en el stella, que bonitos son los full days contigo, los quiero para toda la vida", "fotos": ["https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/cita%20comiendo%20hamburgesas.JPG"]},
+        {"titulo": "Ahora usas mi inicial", "desc": "La primera vez que te la pusiste casi se me sale mi corazoncito, te queda muy bien la g, y yo me siento completamente tuya", "fotos": ["https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/usas%20mi%20inicial.JPG"]},
+        {"titulo": "Somos kbros", "desc": "Ojo creo que somos gays DAJDJADJAJ por muchos más pride juntitas VIVAN LAS LESBIANAS", "fotos": ["https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/nuestros%20nombres%20pride.HEIC"]},
+        {"titulo": "Tan pero tan linda", "desc": "QUE BONITA CON NUESTRA MANTITA MIMIMIMIMI citas casuales como la que tuvimos ese día, o simplemente estar en cato contigo es perfecto", "fotos": ["https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/IMG_1171.HEIC"]},
+        {"titulo": "Bien cansaditas", "desc": "Porque estaremos tan cansaditas a amor? Jejejeje que buen día, creo que chi te acuerdas como olvidarlo, comimos bien rico (no almorzamos), que ganas de siempre comer rico contigo :3", "fotos": ["https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/ese%20jueves%20en%20mi%20casita.HEIC"]},
+        {"titulo": "Serving cunt", "desc": "Este día servimos concha, fotito juntitas cuando estabas por quedarte dormida encima de mío, siempre voy a estar aquí para ti", "fotos": ["https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/fiesta%20de%20ana.JPG"]},
+        {"titulo": "Full queso", "desc": "Aquí quería pizza y fuimos a comer una jeje, gracias por cumplir mis caprichos y engreírme siempre mi amor, a mí también me gusta hacerlo contigo :3", "fotos": ["https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/cita%20comiendo%20pizza.HEIC"]},
+        {"titulo": "Dímelo de frente", "desc": "Amo demasiado esta foto en la que parece que me quieres consumir, yo también quiero hacerlo la verdad. Te como te como a besos", "fotos": ["https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/beshito.JPG"]},
+        {"titulo": "Mi amor con un quesito", "desc": "Estoy completamente enamorada", "fotos": ["https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/tu%20con%20un%20quesito.HEIC"]},
+        {"titulo": "Aventuras en el centro", "desc": "Este día la pase increíble, me divertí mucho contigo amor paseando y comprando. Sin duda me haces muy feliz :3333", "fotos": ["https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/besito%20en%20el%20centro.JPG"]},
+        {"titulo": "Ahora las dos usamos nuestras iniciales", "desc": "Yo soy tuya como tu eres mía y se siente muy bien :3", "fotos": ["https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/usando%20tu%20inicial.JPG", "https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/mi%20amor%20con%20la%20g.JPG"]},
+        {"titulo": "Mi amor con sus flores", "desc": "Quiero darte flores siempre y verte sonreir todos los días, mi mujer hermosa", "fotos": ["https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/mi%20amor%20con%20sus%20flores.HEIC"]},
+        {"titulo": "FULL LECHE", "desc": "Soy la mujer más suertuda del mundo por tenerte a mi lado, y tu eres la mejor enamorada del mundo, alimentándome con arroz con leche VIVAAAA", "fotos": ["https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/arroz%20con%20leche%201.HEIC", "https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/arroz%20con%20leche%202.JPG"]},
+        {"titulo": "Que tal salchipapa", "desc": "Otra aventura loca loca junto a ti, JAAA tenemos una suerte, igual me he dado cuenta que los días son mejores a tu lado", "fotos": ["https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/esta%20salchipapa.HEIC"]},
+        {"titulo": "Juguemos como locas?", "desc": "JADJADJAJDAJDJADJAJDJA mi mujer competitiva :3 amo jugar como loca contigo mi amor", "fotos": ["https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/juguemos%20como%20locas%3F.HEIC"]},
+        {"titulo": "Amor de mi vida", "desc": "Esta es una de mis fotos favoritas, que me gustaría tener así en un polo cof cof, nunca me canso de decirte que eres preciosa hermosa, te amo con todo mi ser", "fotos": ["https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/mi%20amor%20en%20el%20fil%20esta%20foto%20para%20polo.HEIC"]}
+    ]
+
+    seleccion = st.selectbox("Elige un recuerdo:", [r["titulo"] for r in album_recuerdos])
+
+    recuerdo = next(r for r in album_recuerdos if r["titulo"] == seleccion)
+
+    # Mostrar descripción en cuadro pastel con sombra
+    st.markdown(f"""
+    <div style="
+        background-color: #fff0f5;
+        border-radius: 15px;
+        padding: 20px;
+        color: black;
+        font-family: 'Comic Sans MS', cursive;
+        font-size: 17px;
+        line-height: 1.5;
+        box-shadow: 0 4px 8px rgba(255,153,170,0.2);
+        margin-bottom: 25px;
+    ">
+        <em>{recuerdo['desc']}</em>
+    </div>
+    """, unsafe_allow_html=True)
+
+    fotos = recuerdo["fotos"]
+    if len(fotos) > 1:
+        cols = st.columns(len(fotos))
+        for i, foto in enumerate(fotos):
+            with cols[i]:
+                st.markdown(f"""
+                <div style="display:flex; justify-content:center; margin-bottom:15px;">
+                    <img src="{foto}" style="
+                        width: 250px;
+                        height: 250px;
+                        object-fit: cover;
+                        border: 4px solid #ff99aa;
+                        border-radius: 15px;
+                        box-shadow: 0 4px 12px rgba(255,153,170,0.3);
+                    ">
+                </div>
+                """, unsafe_allow_html=True)
+    else:
+        st.markdown(f"""
+        <div style="display:flex; justify-content:center; margin-bottom:20px;">
+            <img src="{fotos[0]}" style="
+                width: 350px;
+                height: 350px;
+                object-fit: cover;
+                border: 4px solid #ff99aa;
+                border-radius: 15px;
+                box-shadow: 0 4px 12px rgba(255,153,170,0.3);
+            ">
+        </div>
+        """, unsafe_allow_html=True)
+
