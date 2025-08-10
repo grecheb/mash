@@ -377,7 +377,7 @@ with tab2:
         color:#d63384; 
         font-weight:bold; 
         margin-bottom:15px;">
-        Aquí algunos recuerdos bonitos juntitas y por muchísimos más 💜
+        Aquí algunos recuerdos bonitos juntitas y por muchísimos más 
     </p>
     """, unsafe_allow_html=True)
 
