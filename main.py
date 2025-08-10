@@ -303,15 +303,35 @@ elif st.session_state.fase == "principal" and st.session_state.acceso:
     # Pestañas
     tab1, tab2 = st.tabs(["Para ti", "Álbum de recuerdos"])
 
-    # --- Tab 1: Para ti ---
-    with tab1:
-        st.header("Para ti")
-        st.write("""Me gustaría iniciar agradeciéndote por estos increíbles tres meses mi amor. Me siento muy feliz por haberte encontrado y por haber iniciado una relación muy bonita contigo :3. Se que somos chavas y nos queda mucho por vivir y aprender, pero yo estoy segura de que mi futuro es a tu lado. Te veo en todos lados y te pienso en todo momento. Mi corazón es completamente tuyo. Estoy bien enamorada, así como dice Mon en nuestra canción jeje. Te amo muchísimo mi mujer hermosa, espero te guste esta pagina estoy en mi era programadora JADJADJ""")
-        st.image("https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/dibujito%20de%20las%20dos.jpg")
-        st.image([
-            "https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/chiquita%201.JPG",
-            "https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/chiquita%202.HEIC"
-        ], caption=["Estas dos niñas están completamente enamoradas", ""], width=300)
+   with tab1:
+    st.header("Para ti")
+
+    # Texto bonito con estilo (opcional para que se vea más tierno)
+    st.markdown("""
+    <p style="font-size:18px; font-family:'Comic Sans MS', cursive; line-height:1.6; color:#ad1457;">
+    Me gustaría iniciar agradeciéndote por estos increíbles tres meses mi amor. Me siento muy feliz por haberte encontrado y por haber iniciado una relación muy bonita contigo :3. Sé que somos chavas y nos queda mucho por vivir y aprender, pero yo estoy segura de que mi futuro es a tu lado. Te veo en todos lados y te pienso en todo momento. Mi corazón es completamente tuyo. Estoy bien enamorada, así como dice Mon en nuestra canción jeje. Te amo muchísimo mi mujer hermosa, espero te guste esta página, estoy en mi era programadora JADJADJ.
+    </p>
+    """, unsafe_allow_html=True)
+
+    # Imagen dibujito más pequeña y centrada
+    st.image("https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/dibujito%20de%20las%20dos.jpg",
+             width=250, caption="")
+
+    # Dos fotos chiquitas en columnas
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.image("https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/chiquita%201.JPG", width=150)
+    with col2:
+        st.image("https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/chiquita%202.HEIC", width=150)
+
+    # Frase centrada debajo de las dos fotos
+    st.markdown("""
+    <p style="text-align:center; font-style:italic; font-size:16px; color:#d63384; font-family:'Comic Sans MS', cursive;">
+    Estas dos niñas están completamente enamoradas ❤️
+    </p>
+    """, unsafe_allow_html=True)
+
 
     # --- Tab 2: Álbum de recuerdos ---
     with tab2:
