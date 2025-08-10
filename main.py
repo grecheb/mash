@@ -72,8 +72,8 @@ if st.session_state.fase == "advertencia":
     # Botones grandes y centrados
     col1, col2, col3 = st.columns([1, 2, 1])  # Centrado
     with col2:
-        b1 = st.button("✅ Chi", key="btn_chi", use_container_width=True)
-        b2 = st.button("❌ No", key="btn_no", use_container_width=True)
+        b1 = st.button("Chi", key="btn_chi", use_container_width=True)
+        b2 = st.button("No", key="btn_no", use_container_width=True)
 
     if b1:
         st.session_state.fase = "prueba_humano"
