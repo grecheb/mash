@@ -224,37 +224,37 @@ elif st.session_state.fase == "login":
 
 # --- FASE 4: Página principal ---
 elif st.session_state.fase == "principal" and st.session_state.acceso:
-    st.markdown(
-        """
-        <div style="
-            background: linear-gradient(135deg, #ffe6e6, #fff0f5);
-            padding: 30px;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 0 20px rgba(255,182,193,0.5);
-        ">
-            <!-- Imagen del gatito centrada -->
-            <img src="https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/ringuito%20enamordo.png"
-                style="width:150px; height:150px; object-fit:contain; margin-bottom:15px;">
+    html_fase4 = """
+    <div style="
+        background: linear-gradient(135deg, #ffe6e6, #fff0f5);
+        padding: 30px;
+        border-radius: 20px;
+        text-align: center;
+        box-shadow: 0 0 20px rgba(255,182,193,0.5);
+    ">
+        <!-- Imagen del gatito -->
+        <img src="https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/ringuito%20enamordo.png"
+             style="width:150px; height:150px; object-fit:contain; margin-bottom:15px;">
 
-            <!-- Título -->
-            <h1 style="color: #d63384; font-size: 40px; font-family: 'Comic Sans MS', cursive; margin-top:0;">
-                ✨ Felices 3 Meses Mi Amor ✨
-            </h1>
+        <!-- Título -->
+        <h1 style="color: #d63384; font-size: 40px; font-family: 'Comic Sans MS', cursive; margin-top:0;">
+            ✨ Felices 3 Meses Mi Amor ✨
+        </h1>
 
-            <!-- Mensaje -->
-            <h2 style="color: #ff4d6d; font-family: 'Comic Sans MS', cursive; margin-top:10px;">
-                ❤️ Te amo con todo mi corazón ❤️
-            </h2>
+        <!-- Mensaje -->
+        <h2 style="color: #ff4d6d; font-family: 'Comic Sans MS', cursive; margin-top:10px;">
+            ❤️ Te amo con todo mi corazón ❤️
+        </h2>
 
-            <!-- Dedicatoria -->
-            <p style="color: #b3005c; font-size: 20px; font-weight: bold; margin-top:15px;">
-                De Grechi para Mena 💌
-            </p>
-        </div>
-        """,
-        unsafe_allow_html=True  # 🔹 Esto es lo que hace que se renderice el HTML
-    )
+        <!-- Dedicatoria -->
+        <p style="color: #b3005c; font-size: 20px; font-weight: bold; margin-top:15px;">
+            De Grechi para Mena 💌
+        </p>
+    </div>
+    """
+
+    st.markdown(html_fase4, unsafe_allow_html=True)
+
 
 
     # Pestañas
