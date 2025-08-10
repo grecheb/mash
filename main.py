@@ -57,14 +57,26 @@ if st.session_state.fase == "advertencia":
 elif st.session_state.fase == "prueba_humano":
     st.image("https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/ringuito%20de%20hecho%20.png")
     st.write("Resuelve para demostrar que eres humano:")
-    a, b = random.randint(1, 10), random.randint(1, 10)
-    respuesta = st.number_input(f"¿Cuánto es {a} + {b}?", step=1)
+
+    # Guardar a y b en la sesión si aún no existen
+    if "num_a" not in st.session_state or "num_b" not in st.session_state:
+        st.session_state.num_a = random.randint(1, 10)
+        st.session_state.num_b = random.randint(1, 10)
+
+    # Mostrar la suma siempre igual hasta que se acierte
+    respuesta = st.number_input(
+        f"¿Cuánto es {st.session_state.num_a} + {st.session_state.num_b}?",
+        step=1
+    )
+
     if st.button("Verificar"):
-        if respuesta == a + b:
+        if respuesta == st.session_state.num_a + st.session_state.num_b:
             st.session_state.fase = "login"
+            del st.session_state["num_a"]
+            del st.session_state["num_b"]
             st.rerun()
         else:
-            st.error("Respuesta incorrecta. Intenta de nuevo.")
+            st.error("Respuesta incorrecta. Intenta de nuevo.") 
 
 # --- FASE 3: Pantalla de login ---
 elif st.session_state.fase == "login":
