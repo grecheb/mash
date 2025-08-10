@@ -224,7 +224,6 @@ elif st.session_state.fase == "login":
 
 # --- FASE 4: Página principal ---
 elif st.session_state.fase == "principal" and st.session_state.acceso:
-    # Fondo especial para esta fase
     st.markdown("""
     <div style="
         background: linear-gradient(135deg, #ffe6e6, #fff0f5);
@@ -234,7 +233,7 @@ elif st.session_state.fase == "principal" and st.session_state.acceso:
         box-shadow: 0 0 20px rgba(255,182,193,0.5);
     ">
         <h1 style="color: #d63384; font-size: 40px; font-family: 'Comic Sans MS', cursive;">
-             Felices 3 Meses Mi Amor 
+            ✨ Felices 3 Meses Mi Amor ✨
         </h1>
 
         <img src="https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/ringuito%20enamordo.png"
