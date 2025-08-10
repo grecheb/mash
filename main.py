@@ -220,4 +220,4 @@ elif st.session_state.fase == "principal" and st.session_state.acceso:
         recuerdo = next(r for r in album_recuerdos if r["titulo"] == seleccion)
         st.write(recuerdo["desc"])
         for foto in recuerdo["fotos"]:
-            st.image(foto)
+            st.image(foto) 
