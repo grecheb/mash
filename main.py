@@ -134,6 +134,7 @@ elif st.session_state.fase == "prueba_humano":
             
 # --- FASE 3: Pantalla de login ---
 elif st.session_state.fase == "login":
+    # Imagen centrada
     st.markdown("""
     <div style="display:flex; justify-content:center; margin-bottom:15px;">
         <img src="https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/ringuito%20brillante.png"
@@ -141,9 +142,33 @@ elif st.session_state.fase == "login":
     </div>
     """, unsafe_allow_html=True)
 
-    st.title("🔒 Ingresa la contraseña secreta")
-    password_input = st.text_input("Contraseña:", type="password")
-    if st.button("Entrar"):
+    # Caja de login cute
+    st.markdown("""
+    <div style="
+        border: 3px solid #ff80ab;
+        background-color: #ffe4ec;
+        padding: 20px;
+        border-radius: 15px;
+        text-align: center;
+        color: #ad1457;
+        font-weight: bold;
+        font-size: 22px;
+        margin-bottom: 20px;">
+        🔒 Acceso Secreto 💌<br>
+        Ingresa la contraseña para continuar
+    </div>
+    """, unsafe_allow_html=True)
+
+    # Input de contraseña centrado
+    col1, col2, col3 = st.columns([1, 2, 1])
+    with col2:
+        password_input = st.text_input("💖 Contraseña:", type="password", key="password_cute")
+
+        # Botón bonito
+        entrar = st.button("✨ Entrar ✨", use_container_width=True)
+
+    # Lógica de verificación
+    if entrar:
         if password_input.strip().lower() in PASSWORDS_VALIDOS:
             st.session_state.acceso = True
             st.session_state.fase = "principal"
@@ -151,7 +176,7 @@ elif st.session_state.fase == "login":
             st.rerun()
         else:
             st.session_state.intentos += 1
-            st.error("Contraseña incorrecta...")
+            st.error("❌ Contraseña incorrecta...")
             if st.session_state.intentos <= len(mensajes_error):
                 st.info(mensajes_error[st.session_state.intentos - 1])
 
