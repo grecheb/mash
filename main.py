@@ -254,7 +254,6 @@ elif st.session_state.fase == "principal" and st.session_state.acceso:
     """, unsafe_allow_html=True)
 
 
-
     # Pestañas
     tab1, tab2 = st.tabs(["Para ti", "Álbum de recuerdos"])
 
