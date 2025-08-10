@@ -281,13 +281,13 @@ elif st.session_state.fase == "principal" and st.session_state.acceso:
     """, unsafe_allow_html=True)
 
     # Título animado
-    st.markdown('<div class="titulo-brillo">✨ Felices 3 meses mi amor ✨</div>', unsafe_allow_html=True)
+    st.markdown('<div class="titulo-brillo"> Felices 3 meses mi amor </div>', unsafe_allow_html=True)
 
     # Imagen centrada con marco redondo
     st.markdown("""
     <div style="display:flex; justify-content:center; margin-bottom:15px;">
         <img src="https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/ringuito%20enamordo.png"
-             style="width:140px; height:140px; object-fit:cover; border-radius:50%; border:4px solid #ff99aa; background-color: white; padding:5px;">
+             style="width:140px; height:140px; object-fit:cover; background-color: white; padding:5px;">
     </div>
     """, unsafe_allow_html=True)
 
