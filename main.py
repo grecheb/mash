@@ -224,17 +224,31 @@ elif st.session_state.fase == "login":
 
 # --- FASE 4: Página principal ---
 elif st.session_state.fase == "principal" and st.session_state.acceso:
-    st.title("✨ Felices 3 meses mi amor ✨")
-
+    # Fondo especial para esta fase
     st.markdown("""
-    <div style="display:flex; justify-content:center; margin-bottom:15px;">
+    <div style="
+        background: linear-gradient(135deg, #ffe6e6, #fff0f5);
+        padding: 30px;
+        border-radius: 20px;
+        text-align: center;
+        box-shadow: 0 0 20px rgba(255,182,193,0.5);
+    ">
+        <h1 style="color: #d63384; font-size: 40px; font-family: 'Comic Sans MS', cursive;">
+             Felices 3 Meses Mi Amor 
+        </h1>
+
         <img src="https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/ringuito%20enamordo.png"
-             style="width:120px; height:120px; object-fit:contain;">
+             style="width:180px; height:180px; object-fit:contain; margin: 20px 0;">
+
+        <h2 style="color: #ff4d6d; font-family: 'Comic Sans MS', cursive; margin-top:10px;">
+            ❤️ Te amo con todo mi corazón ❤️
+        </h2>
+
+        <p style="color: #b3005c; font-size: 20px; font-weight: bold; margin-top:15px;">
+            De Grechi para Mena 💌
+        </p>
     </div>
     """, unsafe_allow_html=True)
-
-    st.write("Te amo")
-    st.write("de Grechi para Mena")
 
     # Pestañas
     tab1, tab2 = st.tabs(["Para ti", "Álbum de recuerdos"])
