@@ -236,7 +236,7 @@ elif st.session_state.fase == "principal" and st.session_state.acceso:
              style="width:150px; height:150px; object-fit:contain; margin-bottom:15px;">
 
         <h1 style="color: #d63384; font-size: 40px; font-family: 'Comic Sans MS', cursive;">
-            ✨ Felices 3 Meses Mi Amor ✨
+             Felices 3 Meses Mi Amor 
         </h1>
 
         <h2 style="color: #ff4d6d; font-family: 'Comic Sans MS', cursive;">
