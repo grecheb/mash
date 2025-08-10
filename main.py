@@ -253,8 +253,9 @@ elif st.session_state.fase == "principal" and st.session_state.acceso:
             </p>
         </div>
         """,
-        unsafe_allow_html=True
+        unsafe_allow_html=True  # 🔹 Esto es lo que hace que se renderice el HTML
     )
+
 
     # Pestañas
     tab1, tab2 = st.tabs(["Para ti", "Álbum de recuerdos"])
