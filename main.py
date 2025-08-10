@@ -306,31 +306,64 @@ elif st.session_state.fase == "principal" and st.session_state.acceso:
     with tab1:
         st.header("Para ti")
 
-        # Texto bonito con estilo (opcional para que se vea más tierno)
+        # Texto en cuadro pastel, negro y con buena tipografía
         st.markdown("""
-        <p style="font-size:18px; font-family:'Comic Sans MS', cursive; line-height:1.6; color:#ad1457;">
-        Me gustaría iniciar agradeciéndote por estos increíbles tres meses mi amor. Me siento muy feliz por haberte encontrado y por haber iniciado una relación muy bonita contigo :3. Sé que somos chavas y nos queda mucho por vivir y aprender, pero yo estoy segura de que mi futuro es a tu lado. Te veo en todos lados y te pienso en todo momento. Mi corazón es completamente tuyo. Estoy bien enamorada, así como dice Mon en nuestra canción jeje. Te amo muchísimo mi mujer hermosa, espero te guste esta página, estoy en mi era programadora JADJADJ.
-        </p>
+        <div style="
+            background-color: #fff0f5;
+            border-radius: 15px;
+            padding: 20px;
+            color: black;
+            font-family: 'Comic Sans MS', cursive;
+            font-size: 18px;
+            line-height: 1.5;
+            margin-bottom: 25px;
+            ">
+            Me gustaría iniciar agradeciéndote por estos increíbles tres meses mi amor. Me siento muy feliz por haberte encontrado y por haber iniciado una relación muy bonita contigo :3. Sé que somos chavas y nos queda mucho por vivir y aprender, pero yo estoy segura de que mi futuro es a tu lado. Te veo en todos lados y te pienso en todo momento. Mi corazón es completamente tuyo. Estoy bien enamorada, así como dice Mon en nuestra canción jeje. Te amo muchísimo mi mujer hermosa, espero te guste esta página, estoy en mi era programadora JADJADJ.
+        </div>
         """, unsafe_allow_html=True)
 
-        # Imagen dibujito más pequeña y centrada
-        st.image("https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/dibujito%20de%20las%20dos.jpg",
-             width=250, caption="")
+        # Imagen dibujito más grande y centrada
+        st.markdown("""
+        <div style="display:flex; justify-content:center; margin-bottom: 30px;">
+            <img src="https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/dibujito%20de%20las%20dos.jpg"
+                 style="width:320px; border-radius:15px; object-fit:cover; box-shadow: 0 4px 10px rgba(255, 153, 170, 0.4);">
+        </div>
+        """, unsafe_allow_html=True)
 
-        # Dos fotos chiquitas en columnas
+        # Dos fotos chicas con marco y tamaño igual, centradas
         col1, col2 = st.columns(2)
 
         with col1:
-            st.image("https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/chiquita%201.JPG", width=150)
-        with col2:
-            st.image("https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/chiquita%202.HEIC", width=150)
+            st.markdown("""
+            <div style="
+                display:flex; justify-content:center; margin-bottom:10px;">
+                <img src="https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/chiquita%201.JPG"
+                     style="width:180px; height:180px; object-fit:cover; border: 4px solid #ff99aa; border-radius: 15px; box-shadow: 0 2px 8px rgba(255, 153, 170, 0.3);">
+            </div>
+            """, unsafe_allow_html=True)
 
-        # Frase centrada debajo de las dos fotos
+        with col2:
+            st.markdown("""
+            <div style="
+                display:flex; justify-content:center; margin-bottom:10px;">
+                <img src="https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/chiquita%202.HEIC"
+                     style="width:180px; height:180px; object-fit:cover; border: 4px solid #ff99aa; border-radius: 15px; box-shadow: 0 2px 8px rgba(255, 153, 170, 0.3);">
+            </div>
+            """, unsafe_allow_html=True)
+
+        # Frase centrada debajo de las dos fotos, con margen superior para separación
         st.markdown("""
-        <p style="text-align:center; font-style:italic; font-size:16px; color:#d63384; font-family:'Comic Sans MS', cursive;">
-        Estas dos niñas están completamente enamoradas ❤️
+        <p style="
+            text-align:center;
+            font-style:italic;
+            font-size:16px;
+            color:#d63384;
+            font-family:'Comic Sans MS', cursive;
+            margin-top: 0;">
+            Estas dos niñas están completamente enamoradas ❤️
         </p>
         """, unsafe_allow_html=True)
+
 
 
     # --- Tab 2: Álbum de recuerdos ---
