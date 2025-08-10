@@ -8,11 +8,15 @@ st.set_page_config(page_title="Felices 3 meses ❤️", layout="wide")
 st.markdown("""
     <style>
     /* Fondo general con imagen y degradado cute */
-    body {
+    [data-testid="stAppViewContainer"] {
         background: url('https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/tikiti.png') repeat center,
                     linear-gradient(135deg, #ffe6e6, #fff0f5);
         background-size: 100px 100px, cover;
         font-family: 'Comic Sans MS', cursive, sans-serif;
+    }
+    /* Para que el fondo cubra toda la pantalla aunque haya poco contenido */
+    [data-testid="stAppViewContainer"] > div {
+        min-height: 100vh;
     }
 
     /* Botones más grandes y redondeados */
