@@ -103,7 +103,7 @@ elif st.session_state.fase == "prueba_humano":
         font-weight: bold;
         font-size: 22px;
         margin-bottom: 20px;">
-        🧠 Verificación de Humano 🧠<br>
+         Verificación de Humano <br>
         Resuelve esta sencilla suma para continuar
     </div>
     """, unsafe_allow_html=True)
