@@ -49,7 +49,7 @@ if st.session_state.fase == "advertencia":
     col1, col2 = st.columns(2)
     if col1.button("Chi"):
         st.session_state.fase = "prueba_humano"
-        st.experimental_rerun()
+        st.rerun()
     if col2.button("No"):
         st.write("Miau Miau Miau Miau")
 
@@ -62,7 +62,7 @@ elif st.session_state.fase == "prueba_humano":
     if st.button("Verificar"):
         if respuesta == a + b:
             st.session_state.fase = "login"
-            st.experimental_rerun()
+            st.rerun()
         else:
             st.error("Respuesta incorrecta. Intenta de nuevo.")
 
@@ -76,7 +76,7 @@ elif st.session_state.fase == "login":
             st.session_state.acceso = True
             st.session_state.fase = "principal"
             st.success("¡Correcto! :3")
-            st.experimental_rerun()
+            st.rerun()
         else:
             st.session_state.intentos += 1
             st.error("Contraseña incorrecta...")
