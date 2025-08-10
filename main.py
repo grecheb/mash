@@ -41,6 +41,7 @@ if "acceso" not in st.session_state:
 
 # --- FASE 1: Advertencia inicial ---
 if st.session_state.fase == "advertencia":
+    # Imagen centrada
     st.markdown("""
     <div style="display:flex; justify-content:center; margin-bottom:15px;">
         <img src="https://raw.githubusercontent.com/grecheb/mash/refs/heads/main/images/ringuito%20alerta.png"
@@ -48,15 +49,36 @@ if st.session_state.fase == "advertencia":
     </div>
     """, unsafe_allow_html=True)
 
-    st.markdown("<h1 style='text-align:center;'>ADVERTASAO</h1>", unsafe_allow_html=True)
-    st.write("Abre esta página en tu compu para visualizarla mejor")
+    # Caja de advertencia en rojo
+    st.markdown("""
+    <div style="
+        border: 3px solid red;
+        background-color: #ffe6e6;
+        padding: 15px;
+        border-radius: 10px;
+        text-align: center;
+        color: red;
+        font-weight: bold;
+        font-size: 22px;
+        margin-bottom: 20px;">
+        ⚠️ ADVERTASAO ⚠️<br>
+        Abre esta página en tu compu para visualizarla mejor
+    </div>
+    """, unsafe_allow_html=True)
 
-    st.write("¿Estás viendo esto desde tu compu?")
-    col1, col2 = st.columns(2)
-    if col1.button("Chi"):
+    # Pregunta separada
+    st.markdown("<h3 style='text-align:center; margin-bottom:15px;'>¿Estás viendo esto desde tu compu?</h3>", unsafe_allow_html=True)
+
+    # Botones grandes y centrados
+    col1, col2, col3 = st.columns([1, 2, 1])  # Centrado
+    with col2:
+        b1 = st.button("✅ Chi", key="btn_chi", use_container_width=True)
+        b2 = st.button("❌ No", key="btn_no", use_container_width=True)
+
+    if b1:
         st.session_state.fase = "prueba_humano"
         st.rerun()
-    if col2.button("No"):
+    if b2:
         st.write("Miau Miau Miau Miau")
 
 # --- FASE 2: Prueba para humanos ---
